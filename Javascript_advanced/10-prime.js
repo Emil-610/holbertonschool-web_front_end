@@ -1,25 +1,27 @@
+'use strict';
 
+function countPrimeNumbers() {
+    function checkPrimeNumber(n) {
+        for (let i = 2; i < n; i++) {
+            if (n % i === 0) {
+                return false;
+            }
+        }
+        return true;
+    }
 
-function countPrimeNumbers(number){
-	for (let counter = 0; counter <= 100; counter++) {
-		let notPrime = false;
-		for (let i = 2; i < number; i++) {
-        	if (counter%i===0 && i!==counter) {
-				notPrime = true;
-			}
-		}
-		if (notPrime === false) {
-                console.log(counter);
-		}
-	}
+    let count = 0;
+    for (let j = 2; j <= 100; j++) {
+        if (checkPrimeNumber(j)) {
+            count++;
+        }
+    }
+    return count;
 }
 
-
-let t0 = performance.now();
-var times = 100;
-for (var i=0; i < times; i++){
-	countPrimeNumbers();
+let a = performance.now();
+for (let i = 0; i < 100; i++) {
+    countPrimeNumbers();
 }
-let t1 = performance.now();
-
-console.log(`Execution time of printing countPrimeNumbers was ${(t1- t0)/100} milliseconds`);
+let b = performance.now();
+console.log('Execution time of calculating prime numbers 100 times was ' + (b - a) + ' milliseconds.');

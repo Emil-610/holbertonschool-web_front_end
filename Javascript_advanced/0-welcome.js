@@ -1,9 +1,10 @@
-// a function that takes 2 arguments 
-// firstName and lastName and displays a greet
+"use strict";
+
 function welcome(firstName, lastName) {
-    let fullName = firstName + ' ' + lastName;
-    function displayFullName() {
-        alert('Welcome ' + fullName + '!');
-    }
-    displayFullName();
+  let fullName = firstName + " " + lastName;
+
+  function displayFullName() {
+    alert("Welcome" + " " + fullName + "!");
+  }
+  displayFullName();
 }

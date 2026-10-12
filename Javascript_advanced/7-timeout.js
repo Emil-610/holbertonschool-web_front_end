@@ -1,6 +1,9 @@
+'use strict';
+
 console.log('Start of the execution queue');
-for (let iteration = 1; iteration <= 100; ++iteration) {
-	console.log(iteration)
+setTimeout(function () { console.log('Final code block to be executed'); }, 0);
+
+for (let i = 1; i <= 100; i++) {
+    console.log(i);
 }
-setTimeout(console.log('Final code block to be executed'), 0);
 console.log('End of the loop printing');

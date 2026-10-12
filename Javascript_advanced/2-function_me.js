@@ -1,10 +1,11 @@
-// a function that displays 3 alerts
+'use strict';
 
-function welcomeMessage(fullName){
-	alert('welcome' + fullName);
+function welcomeMessage (fullName) {
+    return function () {
+        alert('Welcome' + ' ' + fullName);
+    };
 }
 
-guillame = function() {welcomeMessage(" "+"Guillaume")};
-alex = function() {welcomeMessage(" "+"Alex")};
-fred = function() {welcomeMessage(" "+"Fred")};
-
+let guillaume = welcomeMessage('Guillaume');
+let alex = welcomeMessage('Alex');
+let fred = welcomeMessage('Fred');

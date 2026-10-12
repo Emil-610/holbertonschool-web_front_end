@@ -1,14 +1,17 @@
-// returns number of students
+'use strict';
 
-function createClassRoom(numberOfStudents) {
+function createClassRoom(numbersOfStudents) {
     function studentSeat(seat) {
-        return function(){ return seat };
+        return function() {
+            return seat;
+        };
     }
-	let students = [];
-	for (let iteration = 0; iteration < numberOfStudents; iteration++) {
-		students.push(studentSeat(iteration + 1));
-	}
-	return students;
+    let students = [];
+
+    for (let i = 0; i < numbersOfStudents; i++) {
+        students[i] = studentSeat(i + 1);
+    }
+    return students;
 }
 
 let classRoom = createClassRoom(10);
